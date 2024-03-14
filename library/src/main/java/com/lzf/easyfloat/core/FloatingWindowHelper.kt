@@ -48,10 +48,12 @@ internal class FloatingWindowHelper(val context: Context, var config: FloatConfi
                 post { callback.onCreate(createWindowInner()) }
                 return
             }
-            callback.onCreate(false)
-            config.callbacks?.createdResult(false, WARN_ACTIVITY_NULL, null)
-            config.floatCallbacks?.builder?.createdResult?.invoke(false, WARN_ACTIVITY_NULL, null)
-        } else callback.onCreate(createWindowInner())
+            // callback.onCreate(false)
+            // config.callbacks?.createdResult(false, WARN_ACTIVITY_NULL, null)
+            // config.floatCallbacks?.builder?.createdResult?.invoke(false, WARN_ACTIVITY_NULL, null)
+        } else
+        
+        callback.onCreate(createWindowInner())
     }
 
     private fun createWindowInner(): Boolean = try {
